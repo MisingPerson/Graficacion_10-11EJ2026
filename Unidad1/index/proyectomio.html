@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gráficos Básicos - Chart.js</title>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Chart.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <main class="container">
+    <h1>Gráficos sencillos con Chart.js</h1>
+    
+    <section>
+      <h2>Ventas mensuales 2025</h2>
+      <div class="chart-container">
+        <canvas id="myChartBar"></canvas>
+      </div>
+    </section>
+
+    <section>
+      <h2>Distribución de usuarios</h2>
+      <div class="chart-container">
+        <canvas id="myChartPie"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <!-- Tu lógica -->
+  <script src="js/main.js"></script>
+</body>
+</html>
