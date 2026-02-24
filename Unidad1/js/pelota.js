@@ -1,8 +1,9 @@
-let x = 0;
-let velocidad = 3;          // píxeles por frame
+let y;
+let velocidad = 10;          
 
 function setup() {
   createCanvas(400, 200);
+  y = height / 2; 
 }
 
 function draw() {
@@ -10,13 +11,13 @@ function draw() {
   
   fill(100, 180, 255);      // color azul claro
   noStroke();
-  circle(x, 100, 50);
+  circle(width / 2, y, 50);
   
-  // Actualizamos la posición
-  x = x + velocidad;
+  
+  y = y + velocidad;
   
   // Detectamos bordes y cambiamos dirección
-  if (x > width - 25 || x < 25) {   // 25 = mitad del diámetro (radio)
+  if (y > height - 25 || y < 25) {   // 25 = mitad del diámetro (radio)
     velocidad = velocidad * -1;     // invertimos el sentido
   }
 }
