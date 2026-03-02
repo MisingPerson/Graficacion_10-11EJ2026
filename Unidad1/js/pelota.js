@@ -1,23 +1,30 @@
-let y;
-let velocidad = 10;          
+let x;
+let velocidad = 5;
+let aceleracion = 0.58;
 
 function setup() {
-  createCanvas(400, 200);
-  y = height / 2; 
+  createCanvas(1200, 600);
+  x = width / 2;
 }
 
 function draw() {
   background(220);
   
-  fill(100, 180, 255);      // color azul claro
+  fill(100, 180, 255);
   noStroke();
-  circle(width / 2, y, 50);
+  circle(x, height / 2, 50);
   
+  x += velocidad;
   
-  y = y + velocidad;
-  
-  // Detectamos bordes y cambiamos dirección
-  if (y > height - 25 || y < 25) {   // 25 = mitad del diámetro (radio)
-    velocidad = velocidad * -1;     // invertimos el sentido
+  if (x > width - 25 || x < 25) {
+    velocidad *= -1.08;
+    // Opcional: pequeño impulso extra al rebotar
+    // velocidad *= 1.08;
   }
+  
+  // Control oscilante de velocidad (como un "efecto breathing")
+  velocidad += aceleracion;
+  
+  if (abs(velocidad) > 25)  aceleracion *= -1;     // cambia dirección de aceleración
+  if (abs(velocidad) < 5)   aceleracion *= -1;
 }
